@@ -1,63 +1,67 @@
+
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Murmu 使用者條款</title>
+  <title>Murmu Terms of Use</title>
   <style>
     body {
       font-family: "Helvetica Neue", sans-serif;
-      margin: 20px;
-      padding: 0;
-      color: #333;
-      background-color: #fff;
+      line-height: 1.8;
+      padding: 2rem;
+      max-width: 900px;
+      margin: auto;
+      background-color: #f9f9f9;
     }
-    h1, h2 {
-      color: #444;
+    h1 {
+      text-align: center;
     }
-    .lang-switcher {
-      margin-bottom: 20px;
+    .lang-btns {
+      text-align: center;
+      margin-bottom: 2rem;
     }
-    .lang-switcher button {
-      margin-right: 10px;
-      padding: 8px 16px;
-      font-size: 14px;
-      border: 1px solid #ccc;
-      background-color: #f8f8f8;
+    .lang-btns button {
+      margin: 0 0.5em;
+      padding: 0.5em 1em;
+      font-size: 1em;
       cursor: pointer;
-      border-radius: 6px;
     }
-    .lang {
+    .lang-section {
       display: none;
     }
-    .lang.active {
+    .lang-section.active {
       display: block;
     }
   </style>
+  <script>
+    function switchLang(lang) {
+      document.querySelectorAll('.lang-section').forEach(function(el) {
+        el.classList.remove('active');
+      });
+      document.getElementById(lang).classList.add('active');
+    }
+    window.onload = function() {
+      switchLang('zh');
+    }
+  </script>
 </head>
 <body>
-
-  <div class="lang-switcher">
+  <h1>Murmu Terms of Use</h1>
+  <div class="lang-btns">
     <button onclick="switchLang('zh')">繁體中文</button>
     <button onclick="switchLang('en')">English</button>
     <button onclick="switchLang('ja')">日本語</button>
   </div>
-
-  <!-- 中文 -->
-  <div class="lang active" id="zh">
-    <h1>Murmu 使用者條款</h1>
+  <div id="zh" class="lang-section active">
     <h2>一、服務內容</h2>
     <p>Murmu 是一款讓使用者自由表達當下心情、思緒與生活片段的 App。你可以透過文字、emoji、心情圖示等方式，將這些 Murmur 分享給你的親密朋友。</p>
-
     <h2>二、隱私與分享</h2>
     <p>Murmu 鼓勵用戶以更輕鬆、無壓力的方式分享情緒與想法。所有內容僅限您指定的好友查看，平台不會對外公開您的 Murmur。</p>
-
     <h2>三、使用者行為</h2>
     <p>請尊重其他使用者，不得發布違法、攻擊性、歧視或侵害他人權益之內容。</p>
-
     <h2>四、資料儲存</h2>
     <p>您的 murmur 將儲存在雲端，並透過 Firebase 或等效服務提供同步與備份。資料安全請參閱 Firebase 服務條款。</p>
-
     <h2>五、帳號與訂閱方案</h2>
     <p>本 App 提供免費使用方案，亦提供進階訂閱服務。</p>
     <ul>
@@ -67,74 +71,50 @@
       <li>所有付款均由平台帳戶（如 Apple ID、Google Play）處理。</li>
       <li>退款規定依平台（Apple、Google）政策為準。</li>
     </ul>
-
     <h2>六、其他</h2>
     <p>若有任何疑問，請透過 App 中聯絡我們的方式與我們聯繫。</p>
   </div>
-
-  <!-- English -->
-  <div class="lang" id="en">
-    <h1>Murmu Terms of Use</h1>
+  <div id="en" class="lang-section">
     <h2>1. Service Overview</h2>
     <p>Murmu is an app that lets users casually share thoughts, feelings, or daily moments. You can express yourself through text, emojis, and mood icons, and share your murmurs with close friends only.</p>
-
     <h2>2. Privacy & Sharing</h2>
     <p>Murmu promotes a low-pressure way to express yourself. All murmurs are visible only to your selected friends. Murmu does not publish your content publicly.</p>
-
     <h2>3. User Conduct</h2>
     <p>Please respect others. Do not post illegal, offensive, discriminatory, or harmful content.</p>
-
     <h2>4. Data Storage</h2>
     <p>Your murmurs are stored securely via cloud services such as Firebase. For details, refer to Firebase's terms of service.</p>
-
     <h2>5. Account & Subscription</h2>
-    <p>Murmu is free to use, with optional premium subscriptions:</p>
     <ul>
+      <li>Murmu is free to use, with optional premium subscriptions.</li>
       <li>Subscribers get access to more emoji packs, mood analysis, and bonus features.</li>
       <li>Subscriptions auto-renew based on your selected plan (e.g., monthly or annually).</li>
       <li>You can cancel anytime via your account settings. Canceled plans remain active until the end of the billing period.</li>
       <li>All payments are processed via your platform account (e.g., Apple ID, Google Play).</li>
       <li>Refunds follow the App Store or Play Store refund policy. Murmu does not handle direct refunds.</li>
     </ul>
-
     <h2>6. Contact</h2>
     <p>If you have any questions, please contact us through the support option in the app.</p>
   </div>
-
-  <!-- 日本語 -->
-  <div class="lang" id="ja">
-    <h1>Murmu 利用規約</h1>
+  <div id="ja" class="lang-section">
     <h2>1. サービス内容</h2>
     <p>Murmu は、日常の思いや気持ちを気軽に共有できるアプリです。テキストや絵文字、ムードアイコンを使って、親しい友人とだけ murmur（つぶやき）を共有できます。</p>
-
     <h2>2. プライバシーと共有</h2>
     <p>Murmu は、気軽に感情や考えを表現できる環境を提供します。あなたの murmur は、あなたが指定した友人のみに表示されます。公開されることはありません。</p>
-
     <h2>3. ユーザー行動</h2>
     <p>他のユーザーを尊重し、違法・攻撃的・差別的・有害な内容の投稿はご遠慮ください。</p>
-
     <h2>4. データ保存</h2>
     <p>あなたの murmur は Firebase などのクラウドサービスに安全に保存されます。詳しくは、各サービスの利用規約をご確認ください。</p>
-
     <h2>5. アカウントとサブスクリプション</h2>
-    <p>本アプリは無料で利用可能ですが、有料サブスクリプションも提供しています。</p>
     <ul>
+      <li>本アプリは無料で利用可能ですが、有料サブスクリプションも提供しています。</li>
       <li>サブスクリプションでは、追加の絵文字パック、感情分析などが利用可能になります。</li>
       <li>サブスクリプションは自動更新で、月額や年額など選択したプランに基づいて課金されます。</li>
       <li>いつでも設定から解約可能です。解約後も期間満了までは利用可能です。</li>
       <li>すべての支払いは Apple ID や Google Play などのプラットフォーム経由で処理されます。</li>
       <li>返金ポリシーは、各プラットフォーム（Apple、Google）のポリシーに従います。</li>
     </ul>
-
     <h2>6. お問い合わせ</h2>
     <p>ご不明な点がございましたら、アプリ内の「お問い合わせ」よりご連絡ください。</p>
   </div>
-
-  <script>
-    function switchLang(lang) {
-      document.querySelectorAll(".lang").forEach(el => el.classList.remove("active"));
-      document.getElementById(lang).classList.add("active");
-    }
-  </script>
 </body>
 </html>
